@@ -4,11 +4,13 @@ import Home from "../Pages/Home";
 import Services from "../Pages/Services";
 import MyProfile from "../Pages/MyProfile";
 import ServicesDetails from "../Pages/ServicesDetails";
+import ErrorPage from "../Pages/ErrorPage";
 let router = createBrowserRouter(
     [
         {
             path: "/",
             element: <HomeLayout></HomeLayout>,
+            errorElement: <ErrorPage></ErrorPage>,
             children: [
                 {
                     path: "",

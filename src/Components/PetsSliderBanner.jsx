@@ -1,5 +1,5 @@
 import React from 'react';
-import petsBanner1 from "../assets/petsBanner1.jpeg";
+import petsBanner1 from "../assets/petsBanner1.jpg"
 import petsBanner2 from "../assets/petsBanner2.jpeg";
 import petsBanner3 from "../assets/petsBanner3.jpeg";
 import petsBanner4 from "../assets/petsBanner4.jpeg";
