@@ -6,7 +6,7 @@ import nutritionImage from "../assets/nutration.jpg"
 const WinterCareTips = () => {
     return (
         <div className='pb-20 bg-orange-100 px-3'>
-            <h2 className='text-3xl font-bold text-center pt-15 pb-10'>Winter Care Tips for Pets</h2>
+            <h2 className='text-3xl font-bold text-center pt-15 pb-10'>Winter Care Tips for <span className='text-orange-600'>Pets</span></h2>
             <div className='grid grid-cols-3 pb-10 gap-10'>
                 <div className='flex items-center gap-3 border-r-2 border-gray-300 pr-5'>
                     <div className='space-y-1'>

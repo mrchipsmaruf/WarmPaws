@@ -6,7 +6,7 @@ import micale from "../assets/drmicale.jpg"
 const ExpertVets = () => {
     return (
         <div className='bg-orange-50'>
-            <h2 className='text-3xl font-bold text-center pt-15 pb-15'>Meet Our Expert Vets</h2>
+            <h2 className='text-3xl font-bold text-center pt-15 pb-15'>Meet Our <span className='text-orange-600'>Expert Vets</span></h2>
             <div className='grid grid-cols-3 gap-10 text-center pb-20'>
                 <div className='flex flex-col items-center gap-3'>
                     <img className='w-[350px] rounded-4xl pb-3' src={drjoseph} alt="" />
