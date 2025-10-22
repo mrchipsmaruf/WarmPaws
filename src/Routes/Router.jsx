@@ -17,19 +17,20 @@ let router = createBrowserRouter(
                     element: <Home></Home>
                 },
                 {
+                    path: "/services",
+                    element: <Services></Services>
+
+                },
+                {
                     path: "/services/:serviceId",
-                    element: <ServicesDetails></ServicesDetails>
+                    element: <ServicesDetails></ServicesDetails>,
+                    loader: () => fetch("/petServices.json")
                 },
             ]
         },
         {
             path: "/auth",
             element: <h2>Authentication layout</h2>
-        },
-        {
-            path: "/services",
-            element: <Services></Services>
-
         },
         {
             path: "/myProfile",

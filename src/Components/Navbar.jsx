@@ -11,9 +11,9 @@ const Navbar = () => {
                 <p className='font-semibold text-2xl'>Warm<span className='text-orange-400'>Paws</span></p>
             </div>
             <div className='flex gap-10'>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/services">Services</NavLink>
-                <NavLink to="/myProfile">My Profile</NavLink>
+                <NavLink className={"hover:text-orange-300"} to="/">Home</NavLink>
+                <NavLink className={"hover:text-orange-300"} to="/services">Services</NavLink>
+                <NavLink className={"hover:text-orange-300"} to="/myProfile">My Profile</NavLink>
             </div>
             <div className='flex items-center gap-5'>
                 <img className='w-full h-[40px]' src={userImage} alt="" />

@@ -1,4 +1,5 @@
 import React, { Suspense, use } from 'react';
+import { NavLink } from 'react-router';
 
 let servicesPromise = fetch("/petServices.json").then(res => res.json());
 
@@ -25,9 +26,10 @@ const Services = () => {
                             <p className='text-yellow-500 mb-1'>Rating: {service.rating} ⭐</p>
                             <p className='text-gray-600 mb-3'>Slots Available: {service.slotsAvailable}</p>
                             <p className='text-gray-700 flex-1'>{service.description}</p>
-                            <button className='mt-4 btn bg-orange-400 hover:bg-orange-500 text-white py-2 px-4 rounded-lg'>
-                                Book Now
-                            </button>
+                            
+                            <NavLink to={`/services/${service.serviceId}`} className='mt-4 btn bg-orange-400 hover:bg-orange-500 w-full text-white py-2 px-4 rounded-lg'>
+                                View Details
+                            </NavLink>
                         </div>
                     ))}
                 </div>

@@ -1,9 +1,42 @@
-import React from 'react';
+import React from "react";
+import { useLoaderData, useParams } from "react-router";
 
-const ServicesDetails = () => {
+let ServicesDetails = () => {
+    let data = useLoaderData();
+    let { serviceId } = useParams();
+
+
+    let service = data.find(item => item.serviceId == serviceId);
+
     return (
-        <div>
-            
+        <div className="max-w-3xl mx-auto bg-white p-6 my-10 border border-gray-300 rounded-xl shadow-md mb-20">
+            <img
+                src={service.image}
+                alt={service.serviceName}
+                className="w-full h-64 object-cover rounded-lg mb-5"
+            />
+            <h2 className="text-3xl font-bold mb-2 text-orange-600">{service.serviceName}</h2>
+            <p className="text-gray-600 mb-1 "><span className="font-semibold">Provider: </span> {service.providerName}</p>
+            <p className="text-gray-600 mb-1"><span className="font-semibold">Email: </span>{service.providerEmail}</p>
+            <p className="text-gray-600 mb-1"><span className="font-semibold">Category: </span>{service.category}</p>
+            <p className="text-orange-500 font-semibold mb-1"><span className="font-semibold">Price: $</span>{service.price}</p>
+            <p className="text-yellow-500 mb-1">Rating: {service.rating} ⭐</p>
+            <p className="text-gray-700 mb-4">{service.description}</p>
+
+            <h3 className="text-xl font-semibold mb-3">Book This Service</h3>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    alert("Booking Successful!");
+                    e.target.reset();
+                }}
+                className="flex flex-col gap-3 ">
+                <input type="text" placeholder="Your Name" className="border p-2 rounded-md" required />
+                <input type="email" placeholder="Your Email" className="border p-2 rounded-md" required />
+                <button className="bg-orange-400 btn text-white py-2 rounded-md hover:bg-orange-500">
+                    Book Now
+                </button>
+            </form>
         </div>
     );
 };
