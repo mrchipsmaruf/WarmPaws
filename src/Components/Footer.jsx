@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-orange-300 py-8 text-white">
+        <footer className="bg-orange-300 py-8 text-white w-11/12 mx-auto">
             <div className="w-11/12 mx-auto text-center">
                 <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
 
@@ -27,7 +27,7 @@ const Footer = () => {
                     </nav>
                 </div>
 
-                <aside className="mt-8">
+                <aside className="mt-8 border-t border-dashed border-orange-400 pt-5">
                     <p className="text-center text-white">
                         Copyright © {new Date().getFullYear()} - All rights reserved by{" "}
                         <span className="font-bold text-orange-700">WarmPaws</span>

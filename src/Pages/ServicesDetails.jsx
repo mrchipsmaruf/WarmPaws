@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router";
 
 let ServicesDetails = () => {
@@ -7,6 +8,10 @@ let ServicesDetails = () => {
 
 
     let service = data.find(item => item.serviceId == serviceId);
+    if (!service) {
+        return <p className="text-center text-3xl text-red-500 mt-10">Service not found</p>;
+    }
+
 
     return (
         <div className="max-w-3xl mx-auto bg-white p-6 my-10 border border-gray-300 rounded-xl shadow-md mb-20">
@@ -27,7 +32,7 @@ let ServicesDetails = () => {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    alert("Booking Successful!");
+                    toast.success("Booking Successful!");
                     e.target.reset();
                 }}
                 className="flex flex-col gap-3 ">
