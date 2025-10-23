@@ -9,6 +9,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AuthLayout from "../Layouts/AuthLayout";
 import PrivateRoute from "../Provider/PrivateRoute";
+import { Suspense } from "react";
 let router = createBrowserRouter(
     [
         {
@@ -22,7 +23,12 @@ let router = createBrowserRouter(
                 },
                 {
                     path: "/services",
-                    element: <Services></Services>
+                    element:
+                        <Suspense fallback={<div className="flex justify-center items-center h-screen">
+                            <span className="loading loading-infinity loading-xl"></span>
+                        </div>}>
+                            <Services></Services>
+                        </Suspense>
 
                 },
                 {

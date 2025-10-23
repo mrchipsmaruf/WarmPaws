@@ -47,7 +47,7 @@ const Register = () => {
                 navigate("/");
             })
             .catch(error => {
-                toast.error(error.message);
+                toast.error("User already exist please login your account", error);
             });
 
     };
