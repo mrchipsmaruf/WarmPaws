@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link, useNavigate } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Login = () => {
     let { login } = useContext(AuthContext);
+    let location = useLocation();
     let navigate = useNavigate();
 
     let handleLogin = (e) => {
@@ -17,7 +18,7 @@ const Login = () => {
             .then((result) => {
                 result.user;
                 toast.success("Successfully logged in");
-                navigate("/");
+                navigate(`${location.state? location.state : "/"}`);
             })
             .catch((error) => {
                 toast.error(error.message);
