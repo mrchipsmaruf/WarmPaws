@@ -9,12 +9,12 @@ let ServicesDetails = () => {
 
     let service = data.find(item => item.serviceId == serviceId);
     if (!service) {
-        return <p className="text-center text-3xl text-red-500 mt-10">Service not found</p>;
+        return <p className="text-center text-3xl text-red-500 my-20 ">Service not found</p>;
     }
 
 
     return (
-        <div className="max-w-3xl mx-auto bg-white p-6 my-10 border border-gray-300 rounded-xl shadow-md mb-20">
+        <div className="max-w-3xl mx-auto bg-white p-6 py-10 border border-gray-300 rounded-xl shadow-md">
             <img
                 src={service.image}
                 alt={service.serviceName}

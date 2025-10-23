@@ -7,7 +7,7 @@ const Services = () => {
     let services = use(servicesPromise);
 
     return (
-        <div className='py-10 px-5 pb-20 bg-orange-50 w-11/12 mx-auto'>
+        <div className='py-10 px-15 pb-20 bg-orange-50 w-11/12 mx-auto'>
             <h2 className='text-3xl font-bold text-center pt-15 pb-10'>Popular Winter Care <span className='text-orange-600'>Services</span></h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                 {services.map(service => (
@@ -32,7 +32,6 @@ const Services = () => {
                     </div>
                 ))}
             </div>
-            {/* </Suspense> */}
         </div>
     );
 };

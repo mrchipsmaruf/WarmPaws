@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import logo from "../assets/petLogo.png"
-import userImage from "../assets/user.jpeg"
+import userImage from "../assets/user.png"
 
 const Navbar = () => {
     return (
-        <div className='w-11/12 mx-auto flex justify-around gap-100 items-center pt-10'>
+        <div className='w-11/12 mx-auto flex justify-around gap-20 items-center pt-3 bg-white'>
             <div className='flex items-center gap-3'>
                 <img className='w-[70px]' src={logo} alt="" />
                 <p className='font-semibold text-2xl'>Warm<span className='text-orange-400'>Paws</span></p>
@@ -17,7 +17,9 @@ const Navbar = () => {
             </div>
             <div className='flex items-center gap-5'>
                 <img className='w-full h-[40px]' src={userImage} alt="" />
-                <button className='btn'>Login</button>
+                <Link to="/auth/login" className="btn btn-neutral btn-outline">
+                    Login
+                </Link>
             </div>
         </div>
     );

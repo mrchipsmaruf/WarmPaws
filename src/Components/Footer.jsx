@@ -4,8 +4,8 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <footer className="bg-orange-300 py-8 text-white w-11/12 mx-auto">
-            <div className="w-11/12 mx-auto text-center">
+        <footer className="bg-orange-300 py-8 text-white">
+            <div className="text-center">
                 <div className="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
 
                     <div className="flex flex-col items-center">
@@ -21,7 +21,7 @@ const Footer = () => {
                         <FaInstagram className="hover:text-orange-700 transition-colors duration-200" />
                     </div>
 
-                    <nav className="flex flex-col md:flex-row justify-center items-center gap-3">
+                    <nav className="flex flex-col gap-7 md:flex-row justify-center items-center">
                         <a href="" className="hover:text-orange-700">Contact Info</a>
                         <a href="" className="hover:text-orange-700">Privacy Policy</a>
                     </nav>

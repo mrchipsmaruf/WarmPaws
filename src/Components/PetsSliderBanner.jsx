@@ -15,7 +15,7 @@ const slides = [petsBanner1, petsBanner2, petsBanner3, petsBanner4];
 
 const PetsSliderBanner = () => {
   return (
-    <div className="w-11/12 mx-auto my-8 rounded-2xl overflow-hidden">
+    <div className="w-11/12 mx-auto rounded-2xl overflow-hidden">
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

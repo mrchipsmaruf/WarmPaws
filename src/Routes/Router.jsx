@@ -5,6 +5,9 @@ import Services from "../Pages/Services";
 import MyProfile from "../Pages/MyProfile";
 import ServicesDetails from "../Pages/ServicesDetails";
 import ErrorPage from "../Pages/ErrorPage";
+import Login from "../Pages/Login";
+import Register from "../Pages/Register";
+import AuthLayout from "../Layouts/AuthLayout";
 let router = createBrowserRouter(
     [
         {
@@ -23,14 +26,27 @@ let router = createBrowserRouter(
                 },
                 {
                     path: "/services/:serviceId",
-                    element: <ServicesDetails></ServicesDetails>,
+                    element: <div className="bg-orange-50 w-11/12 mx-auto  py-15">
+                        <ServicesDetails></ServicesDetails>
+                    </div>
+                    ,
                     loader: () => fetch("/petServices.json")
                 },
             ]
         },
         {
             path: "/auth",
-            element: <h2>Authentication layout</h2>
+            element: <AuthLayout></AuthLayout>,
+            children: [
+                {
+                    path:"/auth/login",
+                    element: <Login></Login>
+                },
+                {
+                    path:"/auth/register",
+                    element: <Register></Register>
+                },
+            ]
         },
         {
             path: "/myProfile",
