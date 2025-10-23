@@ -1,11 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Register = () => {
-    let { createUser, setUser } = useContext(AuthContext);
+    let [nameError, setNameError] = useState("");
+    let { createUser, setUser, updateUser } = useContext(AuthContext);
     let navigate = useNavigate();
 
     let handleRegister = (e) => {
@@ -13,21 +14,41 @@ const Register = () => {
 
         let form = e.target;
         let name = form.name.value;
+        if (name.length < 5) {
+            setNameError("Name should be more than 5 character");
+            return;
+        }
+        else {
+            setNameError("");
+        };
+
         let email = form.email.value;
         let photo = form.photo.value;
         let password = form.password.value;
         console.log(name, photo)
 
         createUser(email, password)
-        .then((result) => {
-            toast.success("Welcome to WarmPaws");
-            let user = result.user;
-            setUser(user);
-            navigate("/");
-        })
-        .catch(error => {
-            toast.error(error.message);
-        });
+            .then((result) => {
+                toast.success("Welcome to WarmPaws");
+                let user = result.user;
+                updateUser({
+                    displayName: name,
+                    photoURL: photo
+                })
+                    .then(() => {
+                        setUser({
+                            ...user, displayName: name,
+                            photoURL: photo
+                        });
+                    })
+                    .catch((error) => {
+                        setUser(error)
+                    });
+                navigate("/");
+            })
+            .catch(error => {
+                toast.error(error.message);
+            });
 
     };
     return (
@@ -37,8 +58,11 @@ const Register = () => {
                 <h2 className='pb-5'><span className='text-4xl font-bold'>Warm<span className='text-orange-400'>Paws</span></span></h2>
                 <div>
                     <form onSubmit={handleRegister} className='space-y-3'>
-                        {/* email */}
+                        {/* name */}
                         <input className='input w-full rounded-4xl  focus:outline-none focus:border-orange-300' placeholder='Name' type="text" required name="name" id="" />
+                        {
+                            nameError && <p className='text-red-500 text-sm font-semibold'>{nameError}</p>
+                        }
                         {/* photo url */}
                         <input className='input w-full rounded-4xl  focus:outline-none focus:border-orange-300' placeholder='Photo-URL' type="url" required name="photo" id="" />
                         {/* email */}

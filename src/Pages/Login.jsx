@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Provider/AuthProvider';
 import toast from 'react-hot-toast';
 
 const Login = () => {
+    let [error, setError] = useState("");
     let { login } = useContext(AuthContext);
     let location = useLocation();
     let navigate = useNavigate();
@@ -21,8 +22,8 @@ const Login = () => {
                 navigate(`${location.state? location.state : "/"}`);
             })
             .catch((error) => {
-                toast.error(error.message);
-            })
+                setError(error.message);
+            });
     };
     return (
         <div className='flex justify-center items-center text-center'>
@@ -35,6 +36,9 @@ const Login = () => {
                         <input className='input w-full rounded-4xl  focus:outline-none focus:border-orange-300' placeholder='Email' type="email" name="email" id="" />
                         {/* password */}
                         <input className='input w-full rounded-4xl focus:border-orange-300 focus:outline-none' placeholder='Password' type="password" name="password" id="" />
+                        {
+                            error && <p className='text-red-500 text-sm font-semibold'>{error}</p>
+                        }
                         <p className='text-start text-sm underline pl-2 text-orange-400 hover:text-orange-300'>Forget Password?</p>
                         <button type="submit" className='btn w-full bg-orange-400 text-white hover:bg-orange-300  hover:text-white rounded-4xl'>Login</button>
                         <div className='flex items-center justify-center'>

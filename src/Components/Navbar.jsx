@@ -30,7 +30,7 @@ const Navbar = () => {
                 <NavLink className={"hover:text-orange-300"} to="/myProfile">My Profile</NavLink>
             </div>
             <div className='flex items-center gap-5'>
-                <img className="w-full h-[40px]" src={userImage} alt="" />
+                <img className="w-[40px] h-[40px] rounded-full object-cover cursor-pointer" src={`${user ? user.photoURL : userImage}`} alt="" />
                 {
                     user ? <button onClick={handleLogout} className='btn btn-neutral btn-outline'>
                         Logout
