@@ -28,8 +28,7 @@ const Login = () => {
                 setError("");
             })
             .catch((error) => {
-                setError("Failed to send password reset email. Please try again.");
-                console.error(error.message);
+                setError("Failed to send password reset email. Please try again.", error);
             });
     };
 
