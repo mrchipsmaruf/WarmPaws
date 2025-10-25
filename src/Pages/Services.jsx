@@ -17,11 +17,10 @@ const Services = () => {
     }, []);
 
     return (
-        <div className='py-10 px-15 pb-20 bg-orange-50 w-11/12 mx-auto'>
+        <div className='py-10 md:px-15 pb-20 bg-orange-50 w-11/12 mx-auto'>
             <h2
                 data-aos="fade-down"
-                className='text-3xl font-bold text-center pt-15 pb-10'
-            >
+                className='text-3xl font-bold text-center pt-15 pb-10'>
                 Popular Winter Care <span className='text-orange-600'>Services</span>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -30,8 +29,7 @@ const Services = () => {
                         key={service.serviceId}
                         data-aos="zoom-in"
                         data-aos-delay={index * 100}
-                        className='bg-white rounded-2xl shadow-lg p-5 flex flex-col border border-gray-200 hover:shadow-orange-500'
-                    >
+                        className='bg-white rounded-2xl shadow-lg p-5 flex flex-col border border-gray-200 hover:shadow-orange-500'>
                         <img
                             src={service.image}
                             alt={service.serviceName}
