@@ -44,6 +44,12 @@ const AuthProvider = ({ children }) => {
         }
     }, []);
 
+    const refreshUser = () => {
+        if (auth.currentUser) {
+            setUser({ ...auth.currentUser });
+        }
+    };
+
     let authData = {
         user,
         loading,
@@ -53,6 +59,7 @@ const AuthProvider = ({ children }) => {
         login,
         updateUser,
         loginWithGoogle,
+        refreshUser,
 
     };
     return <AuthContext value={authData}>

@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 
 const Navbar = () => {
     let navigate = useNavigate();
-    let { user, logout } = useContext(AuthContext);
+    let { user, logout, loading } = useContext(AuthContext);
 
     let handleLogout = () => {
         logout()
@@ -20,11 +20,15 @@ const Navbar = () => {
             });
     };
 
+    if (loading) {
+        return null;
+    }
+
     return (
         <div className="sticky top-0 z-50 bg-white">
             <div className='w-11/12 mx-auto flex justify-around gap-20 items-center py-3'>
                 <div className='flex items-center gap-3'>
-                    <img className='w-[70px]' src={logo} alt="" />
+                    <img className='w-[70px]' src={logo} alt="Logo" />
                     <p className='font-semibold text-2xl'>
                         Warm<span className='text-orange-400'>Paws</span>
                     </p>
@@ -37,18 +41,20 @@ const Navbar = () => {
                 </div>
 
                 <div className='flex items-center gap-5'>
-                    <img
-                        className="w-[40px] h-[40px] rounded-full cursor-pointer"
-                        src={user?.photoURL || userImage}
-                        alt=""
-                        title={user?.displayName || "Guest"}
-                    />
+                    <Link to="/myProfile">
+                        <img
+                            className="w-[40px] h-[40px] rounded-full cursor-pointer"
+                            src={user?.photoURL || userImage}
+                            alt="User"
+                            title={user?.displayName || "Guest"}
+                        />
+                    </Link>
                     {user ? (
-                        <button onClick={handleLogout} className='btn btn-neutral btn-outline'>
+                        <button onClick={handleLogout} className='btn text-black hover:text-white bg-orange-50 hover:bg-orange-500'>
                             Logout
                         </button>
                     ) : (
-                        <Link to="/auth/login" className="btn btn-neutral btn-outline">
+                        <Link to="/auth/login" className="btn text-black hover:text-white bg-orange-50 hover:bg-orange-500">
                             Login
                         </Link>
                     )}

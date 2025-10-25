@@ -49,7 +49,7 @@ const Services = () => {
                         <p className='text-gray-600 text-sm mb-1'>
                             <strong>Category:</strong> {service.category}
                         </p>
-                        <p className='text-gray-800 font-semibold mb-1'>
+                        <p className='text-gray-800 font-semibold text-2xl mb-1'>
                             ${service.price}
                         </p>
                         <p className='text-yellow-500 mb-1'>

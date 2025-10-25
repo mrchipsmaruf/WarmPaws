@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useLoaderData, useParams } from "react-router";
 
 let ServicesDetails = () => {
+
+    let [isBooked, setIsBooked] = useState(false);
+
     let data = useLoaderData();
     let { serviceId } = useParams();
 
@@ -33,16 +36,18 @@ let ServicesDetails = () => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     toast.success("Booking Successful!");
+                    setIsBooked(true);
                     e.target.reset();
                 }}
                 className="flex flex-col gap-3 ">
                 <input type="text" placeholder="Your Name" className="border p-2 rounded-md" required />
                 <input type="email" placeholder="Your Email" className="border p-2 rounded-md" required />
-                <button className="bg-orange-400 btn text-white py-2 rounded-md hover:bg-orange-500">
-                    Book Now
-                </button>
-            </form>
-        </div>
+                <button className={`bg-orange-400 btn text-white py-2 rounded-md hover:bg-orange-500 ${isBooked ? "opacity-50 cursor-not-allowed" : ""}`}
+                disabled={isBooked}>
+                {isBooked ? "Booked" : "Book Now"}
+            </button>
+        </form>
+        </div >
     );
 };
 

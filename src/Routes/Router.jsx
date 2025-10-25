@@ -41,6 +41,12 @@ let router = createBrowserRouter(
                     ,
                     loader: () => fetch("/petServices.json")
                 },
+                {
+                    path: "/myProfile",
+                    element: <PrivateRoute>
+                        <MyProfile></MyProfile>
+                    </PrivateRoute>
+                },
             ]
         },
         {
@@ -56,10 +62,6 @@ let router = createBrowserRouter(
                     element: <Register></Register>
                 },
             ]
-        },
-        {
-            path: "/myProfile",
-            element: <MyProfile></MyProfile>
         },
         {
             path: "/*",
