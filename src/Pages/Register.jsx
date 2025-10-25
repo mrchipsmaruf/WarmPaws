@@ -72,56 +72,76 @@ const Register = () => {
     };
 
     return (
-        <div className='flex justify-center items-center text-center'>
-            <div className='bg-orange-50 rounded-4xl p-10 w-[600px]'>
-                <h2 className='text-xl text-orange-700 pb-1'>Welcome to</h2>
-                <h2 className='pb-5'>
-                    <span className='text-4xl font-bold'>
-                        Warm<span className='text-orange-400'>Paws</span>
-                    </span>
+        <div className='flex justify-center items-center bg-orange-50 p-10'>
+            <div className='bg-orange-100 rounded-3xl p-6 sm:p-10 w-full max-w-lg lg:max-w-xl shadow-md'>
+                <h2 className='text-xl sm:text-2xl text-orange-700 pb-1 pt-4 sm:pt-6'>Welcome <span className='text-xl font-bold text-black'>to</span></h2>
+                <h2 className='pb-5 text-2xl sm:text-4xl font-bold'>
+                    <span className='text-orange-400'>WarmPaws</span>
                 </h2>
-                <div>
-                    <form onSubmit={handleRegister} className='space-y-3'>
-                        {/* Name */}
-                        <input className='input w-full rounded-4xl focus:outline-none focus:border-orange-300' placeholder='Name' type='text' required name='name' />
-                        {nameError && <p className='text-red-500 text-sm font-semibold'>{nameError}</p>}
 
-                        {/* Photo URL */}
-                        <input className='input w-full rounded-4xl focus:outline-none focus:border-orange-300' placeholder='Photo-URL' type='url' required name='photo' />
+                <form onSubmit={handleRegister} className='space-y-3 mt-6'>
+                    {/* Name */}
+                    <input
+                        className='input w-full rounded-3xl focus:outline-none focus:border-orange-300 p-2 sm:p-3'
+                        placeholder='Name'
+                        type='text'
+                        required
+                        name='name'
+                    />
+                    {nameError && <p className='text-red-500 text-sm font-semibold'>{nameError}</p>}
 
-                        {/* Email */}
-                        <input className='input w-full rounded-4xl focus:outline-none focus:border-orange-300' placeholder='Email' type='email' required name='email' />
+                    {/* Photo URL */}
+                    <input
+                        className='input w-full rounded-3xl focus:outline-none focus:border-orange-300 p-2 sm:p-3'
+                        placeholder='Photo-URL'
+                        type='url'
+                        required
+                        name='photo'
+                    />
 
-                        {/* Password */}
-                        <input className='input w-full rounded-4xl focus:border-orange-300 focus:outline-none' placeholder='Password' type='password' required name='password' />
-                        {error && <p className='text-red-500 text-sm font-semibold'>{error}</p>}
+                    {/* Email */}
+                    <input
+                        className='input w-full rounded-3xl focus:outline-none focus:border-orange-300 p-2 sm:p-3'
+                        placeholder='Email'
+                        type='email'
+                        required
+                        name='email'
+                    />
 
-                        {/* Button */}
-                        <button className='btn w-full bg-orange-400 text-white hover:bg-orange-300 hover:text-white rounded-4xl'>Register</button>
+                    {/* Password */}
+                    <input
+                        className='input w-full rounded-3xl focus:border-orange-300 focus:outline-none p-2 sm:p-3'
+                        placeholder='Password'
+                        type='password'
+                        required
+                        name='password'
+                    />
+                    {error && <p className='text-red-500 text-sm font-semibold'>{error}</p>}
 
-                        <div className='flex items-center justify-center'>
-                            <div className='flex-1 h-px bg-gray-300'></div>
-                            <span className='px-4 text-gray-600 text-sm'>or</span>
-                            <div className='flex-1 h-px bg-gray-300'></div>
-                        </div>
+                    <button className='btn w-full bg-orange-400 text-white hover:bg-orange-300 hover:text-white rounded-3xl py-2 sm:py-3'>
+                        Register
+                    </button>
 
-                        {/* Google Button */}
-                        <button
-                            onClick={handleGoogleSignUp}
-                            type='button'
-                            className='btn w-full bg-white hover:bg-orange-400 hover:text-white rounded-4xl'
-                        >
-                            <FcGoogle /> Continue with Google
-                        </button>
+                    <div className='flex items-center justify-center mt-3'>
+                        <div className='flex-1 h-px bg-gray-300'></div>
+                        <span className='px-4 text-gray-600 text-sm'>or</span>
+                        <div className='flex-1 h-px bg-gray-300'></div>
+                    </div>
 
-                        <p className='text-sm pt-5'>
-                            Already have an account?{" "}
-                            <Link className='text-orange-400 hover:text-orange-300' to='/auth/login'>
-                                Login
-                            </Link>
-                        </p>
-                    </form>
-                </div>
+                    <button
+                        onClick={handleGoogleSignUp}
+                        type='button'
+                        className='btn w-full bg-white hover:bg-orange-400 hover:text-white rounded-3xl py-2 sm:py-3 flex items-center justify-center gap-2'>
+                        <FcGoogle size={20} /> Continue with Google
+                    </button>
+
+                    <p className='text-sm pt-4 text-center'>
+                        Already have an account?{" "}
+                        <Link className='text-orange-400 hover:text-orange-300' to='/auth/login'>
+                            Login
+                        </Link>
+                    </p>
+                </form>
             </div>
         </div>
     );

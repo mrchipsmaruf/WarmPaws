@@ -11,9 +11,9 @@ const WinterCareTips = () => {
             </h2>
 
             <div className='flex justify-center'>
-                <div className='grid grid-cols-3 pb-10 gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-3 pb-10 gap-10'>
 
-                    <div className='flex items-center gap-3 border-r-2 border-orange-300 pr-5'>
+                    <div className='flex flex-col md:flex-row items-center gap-3 border-r-2 border-orange-300 pr-5'>
                         <div className='space-y-1'>
                             <h2 className='text-2xl font-semibold text-orange-600 pb-3'>Winter Warmth & Comfort</h2>
                             <p className='text-gray-500 border-b border-dashed border-orange-200'>Dress your pets in cozy sweaters or jackets during cold walks.</p>
@@ -23,7 +23,7 @@ const WinterCareTips = () => {
                         <img className='w-[250px] rounded-4xl' src={warmImage} alt="" />
                     </div>
 
-                    <div className='flex items-center gap-3 border-r-2 border-orange-300 pr-5'>
+                    <div className='flex flex-col md:flex-row items-center gap-3 border-r-2 border-orange-300 pr-5'>
                         <div className='space-y-1'>
                             <h2 className='text-2xl font-semibold text-orange-600 pb-3'>Paw & Health Protection</h2>
                             <p className='text-gray-500 border-b border-dashed border-orange-200'>Apply paw balm to prevent cracking from ice, snow, and salt.</p>
@@ -33,7 +33,7 @@ const WinterCareTips = () => {
                         <img className='w-[250px] rounded-4xl' src={pawHealth} alt="" />
                     </div>
 
-                    <div className='flex items-center gap-3'>
+                    <div className='flex flex-col md:flex-row items-center gap-3'>
                         <div className='space-y-1'>
                             <h2 className='text-2xl font-semibold text-orange-600 pb-3'>Nutrition & Safety</h2>
                             <p className='text-gray-500 border-b border-dashed border-orange-200'>Provide a balanced diet with extra calories if pets are active outdoors.</p>
