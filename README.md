@@ -6,31 +6,31 @@ WarmPaws is an animal welfare platform designed to connect people with adoptable
 
 ⭐ Features 
 
-🐶 Adoptable Pets
-Browse pets available for adoption
-View detailed pet information (age, breed, category, etc.)
-Simple and clean user experience
+🐶 Adoptable Pets 
+Browse pets available for adoption 
+View detailed pet information (age, breed, category, etc.) 
+Simple and clean user experience 
 
 ❤️ Donation & Rescue Support
-Support rescue missions through donations
-Transparent donation system
-Encourages community participation in animal welfare activities
+Support rescue missions through donations 
+Transparent donation system 
+Encourages community participation in animal welfare activities 
 
-💎 Modern UI & UX
-Built with React + Vite
-Fully responsive design
-Clean, modern, and visually appealing interface
+💎 Modern UI & UX 
+Built with React + Vite 
+Fully responsive design 
+Clean, modern, and visually appealing interface 
 
-🛠 Tech Stack
-React
-Vite
-JavaScript (ES6+)
-CSS / Tailwind (if applicable)
-Netlify (Deployment)
+🛠 Tech Stack 
+React 
+Vite 
+JavaScript (ES6+)  
+CSS / Tailwind (if applicable) 
+Netlify (Deployment) 
 
-👤 Author
-Md Al Maruf
-GitHub: https://github.com/mrchipsmaruf
-LinkedIn: https://www.linkedin.com/in/mrchipsmaruf/
-
+👤 Author 
+Md Al Maruf 
+GitHub: https://github.com/mrchipsmaruf 
+LinkedIn: https://www.linkedin.com/in/mrchipsmaruf/ 
+ 
 📌 This project is for educational and portfolio purposes.
