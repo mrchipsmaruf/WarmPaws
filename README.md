@@ -1,33 +1,33 @@
-🐾 WarmPaws – Animal Welfare & Adoption Platform
+🐾 WarmPaws – Animal Welfare & Pet Adoption Platform
 
-Live Site: https://radiant-concha-2d69fd.netlify.app/
+🔗 Live Site: https://radiant-concha-2d69fd.netlify.app/
 
-WarmPaws is an animal welfare platform designed to connect people with adoptable pets and support rescue activities through community-driven donations. It aims to create a safe, friendly, and supportive environment where animals can find loving homes and receive proper care.
+WarmPaws is an animal welfare platform designed to connect people with adoptable pets and support rescue missions through community-driven donations. The goal is to provide a safe, friendly, and supportive environment where animals can find loving homes and receive proper care.
 
 ⭐ Features
 🐶 Adoptable Pets
 
 Browse pets available for adoption
 
-Detailed pet information (age, breed, category, etc.)
+View detailed pet information (age, breed, category, etc.)
 
 Simple and clean user experience
 
 ❤️ Donation & Rescue Support
 
-Users can contribute to rescue missions
+Support rescue missions through donations
 
-Transparent donation flow
+Transparent donation system
 
-Supports community-driven animal welfare activities
+Encourages community participation in animal welfare activities
 
-🌐 Modern UI & UX
+💎 Modern UI & UX
 
-Built using React + Vite
+Built with React + Vite
 
 Fully responsive design
 
-Clean and visually appealing interface
+Clean, modern, and visually appealing interface
 
 🛠 Tech Stack
 
@@ -37,25 +37,47 @@ Vite
 
 JavaScript (ES6+)
 
-CSS / Tailwind (if used)
+CSS / Tailwind (if applicable)
 
 Netlify (Deployment)
 
+🚀 Getting Started
 
-📸 Screenshots
+To run this project locally:
 
-(Add screenshots here if you want)
+# Clone the repository
+git clone https://github.com/mrchipsmaruf/WarmPaws.git
 
-Example:
+# Navigate into the project folder
+cd WarmPaws
 
-![Home Page](./screenshots/home.png)
-![Pet Details Page](./screenshots/pet-details.png)
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+
+Your project will run at:
+👉 http://localhost:5173/
+
+📁 Folder Structure
+WarmPaws/
+ ├── public/
+ ├── src/
+ │   ├── components/
+ │   ├── pages/
+ │   ├── assets/
+ │   └── App.jsx
+ ├── package.json
+ ├── vite.config.js
+ └── README.md
 
 👤 Author
 
 Md Al Maruf
 GitHub: https://github.com/mrchipsmaruf
-LinkedIn: https://www.linkedin.com/in/mrchipsmaruf/
 
+LinkedIn: https://www.linkedin.com/in/mrchipsmaruf/
 
 This project is for educational and portfolio purposes.
