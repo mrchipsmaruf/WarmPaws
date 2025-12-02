@@ -2,10 +2,9 @@
 
 🔗 Live Site: https://radiant-concha-2d69fd.netlify.app/
 
-WarmPaws is an animal welfare platform designed to connect people with adoptable pets and support rescue missions through community-driven donations. The goal is to provide a safe, friendly, and supportive environment where animals can find loving homes and receive proper care.
+WarmPaws is an animal welfare platform designed to connect people with adoptable pets and support rescue missions through community-driven donations. The goal is to create a safe, friendly, and supportive environment where animals can find loving homes and receive proper care.
 
 ⭐ Features
-
 🐶 Adoptable Pets
 
 Browse pets available for adoption
@@ -42,12 +41,12 @@ CSS / Tailwind (if applicable)
 
 Netlify (Deployment)
 
-
 👤 Author
 
 Md Al Maruf
+
 GitHub: https://github.com/mrchipsmaruf
 
 LinkedIn: https://www.linkedin.com/in/mrchipsmaruf/
 
-This project is for educational and portfolio purposes.
+📌 This project is for educational and portfolio purposes.
