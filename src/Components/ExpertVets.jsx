@@ -1,5 +1,5 @@
 import React from 'react';
-import drjoseph from "../assets/drJoseph.jpg"
+import drjoseph from "../assets/drjoseph.jpg"
 import emly from "../assets/drsarah.jpg"
 import micale from "../assets/drmicale.jpg"
 
