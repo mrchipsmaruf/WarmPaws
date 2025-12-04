@@ -4,7 +4,7 @@ import Services from './Services';
 import WinterCareTips from '../Components/WinterCareTips';
 import ExpertVets from '../Components/ExpertVets';
 import AboutUs from '../Components/AboutUs';
-import PetsSliderBanner from '../Components/temp';
+import PetsSliderBanner from '../Components/PetsSliderBanner';
 
 
 const Home = () => {
