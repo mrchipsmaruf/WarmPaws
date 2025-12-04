@@ -10,6 +10,9 @@ import Register from "../Pages/Register";
 import AuthLayout from "../Layouts/AuthLayout";
 import PrivateRoute from "../Provider/PrivateRoute";
 import { Suspense } from "react";
+import AboutUs from "../Components/AboutUs";
+import Contact from "../Components/Contact";
+import Support from "../Components/Support";
 let router = createBrowserRouter(
     [
         {
@@ -20,6 +23,18 @@ let router = createBrowserRouter(
                 {
                     path: "",
                     element: <Home></Home>
+                },
+                {
+                    path: "/about",
+                    element: <AboutUs></AboutUs>
+                },
+                {
+                    path: "/contact",
+                    element: <Contact></Contact>
+                },
+                {
+                    path: "/support",
+                    element: <Support></Support>
                 },
                 {
                     path: "/services",
@@ -34,9 +49,7 @@ let router = createBrowserRouter(
                 {
                     path: "/services/:serviceId",
                     element: <div className="bg-orange-50 w-11/12 mx-auto  py-15">
-                        <PrivateRoute>
-                            <ServicesDetails></ServicesDetails>
-                        </PrivateRoute>
+                        <ServicesDetails></ServicesDetails>
                     </div>
                     ,
                     loader: () => fetch("/petServices.json")

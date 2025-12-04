@@ -20,7 +20,7 @@ const Services = () => {
         <div className='py-10 md:px-15 pb-20 bg-orange-50 w-11/12 mx-auto'>
             <h2
                 data-aos="fade-down"
-                className='text-3xl font-bold text-center pt-15 pb-10'>
+                className='text-3xl font-bold text-center pt-8 pb-10'>
                 Popular Winter Care <span className='text-orange-600'>Services</span>
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
