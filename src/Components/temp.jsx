@@ -13,7 +13,7 @@ import petsBanner4 from "../assets/petsBanner4.jpeg";
 
 const slides = [petsBanner1, petsBanner2, petsBanner3, petsBanner4];
 
-const petsSliderBanner = () => {
+const PetsSliderBanner = () => {
   return (
     <div className="w-full">
 
@@ -67,4 +67,4 @@ const petsSliderBanner = () => {
   );
 };
 
-export default petsSliderBanner;
+export default PetsSliderBanner;

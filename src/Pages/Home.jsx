@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
-import PetsSliderBanner from '../Components/petsSliderBanner';
+
 import Services from './Services';
 import WinterCareTips from '../Components/WinterCareTips';
 import ExpertVets from '../Components/ExpertVets';
 import AboutUs from '../Components/AboutUs';
+import PetsSliderBanner from '../Components/temp';
 
 
 const Home = () => {
