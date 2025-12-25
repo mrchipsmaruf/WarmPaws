@@ -70,10 +70,10 @@ const AboutUs = () => {
     return (
         <div
             ref={sectionRef}
-            className="relative w-11/12 mx-auto px-10 pb-20 rounded-2xl overflow-hidden bg-gradient-to-b from-orange-50 to-orange-200"
+            className="relative w-11/12 mx-auto px-10 pb-20 rounded-2xl overflow-hidden"
         >
             {/* BG Animation Layer */}
-            <div className="about-bg absolute inset-0 w-full h-full opacity-20 bg-[url('https://i.ibb.co.com/8RTP4r6/3d-render-winter-snowy-landscape.jpg')] bg-cover"></div>
+            <div className="about-bg absolute inset-0 w-full h-full opacity-20 bg-[url('https://i.ibb.co.com/WqQxRCX/Embrace-Winter-Wonders-Enjoy-cozy-interiors-and-the-beauty-of-nature.jpg')] bg-cover"></div>
 
             {/* FLOATING PARTICLES */}
             {[...Array(12)].map((_, i) => (

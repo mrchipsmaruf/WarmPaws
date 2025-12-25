@@ -1,6 +1,5 @@
-import React, { use, useEffect, useRef } from "react";
+import React, { use, useLayoutEffect, useRef } from "react";
 import { NavLink } from "react-router";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -11,83 +10,67 @@ gsap.registerPlugin(ScrollTrigger);
 let servicesPromise = fetch("/petServices.json").then((res) => res.json());
 
 const Services = () => {
-  let services = use(servicesPromise);
+  const services = use(servicesPromise);
   const containerRef = useRef(null);
 
-  // GSAP Animations
-  useEffect(() => {
-    // FIX ESLINT by using gsap inside context
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const cards = gsap.utils.toArray(".service-card");
-
-      // Heading animation
+      // Heading
       gsap.from(".service-heading", {
         opacity: 0,
-        y: -40,
-        duration: 1.2,
+        y: -30,
+        duration: 0.8,
         ease: "power3.out",
       });
 
-      // Cards animation
-      cards.forEach((card, index) => {
-        gsap.from(card, {
-          opacity: 0,
-          y: 60,
-          duration: 1,
-          delay: index * 0.15,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-          },
-        });
+      // Cards
+      gsap.from(".service-card", {
+        opacity: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+        },
       });
     }, containerRef);
 
-    return () => ctx.revert(); // cleanup GSAP on unmount
+    return () => ctx.revert();
   }, []);
 
   return (
     <div className="py-10 md:px-15 pb-20 bg-orange-50 w-11/12 mx-auto">
       {/* Heading */}
-      <motion.h2
-        className="text-3xl font-bold text-center pt-8 pb-10 service-heading"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <h2 className="text-3xl font-bold text-center pt-8 pb-10 service-heading">
         Popular Winter Care{" "}
         <span className="text-orange-600">Services</span>
-      </motion.h2>
+      </h2>
 
       {/* Cards Section */}
       <div
         ref={containerRef}
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
-        {services.map((service, index) => (
+        {services.map((service) => (
           <motion.div
             key={service.serviceId}
-            className="service-card bg-white rounded-2xl shadow-lg p-5 flex flex-col border border-gray-200"
+            className="service-card bg-white rounded-2xl shadow-lg p-5 flex flex-col border border-gray-200 will-change-transform"
             whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 10px 25px rgba(255,120,50,0.45)",
+              scale: 1.04,
+              boxShadow: "0px 10px 20px rgba(255,120,50,0.4)",
             }}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.7,
-              delay: index * 0.1,
-              ease: "easeOut",
-            }}
+            transition={{ duration: 0.25 }}
           >
             {/* Image */}
             <motion.img
               src={service.image}
               alt={service.serviceName}
+              loading="lazy"
               className="h-48 w-full object-cover rounded-xl mb-4"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.4 }}
+              whileHover={{ scale: 1.08 }}
+              transition={{ duration: 0.3 }}
             />
 
             <h3 className="text-xl font-semibold mb-2 text-orange-600">
