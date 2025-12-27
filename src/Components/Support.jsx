@@ -51,7 +51,7 @@ const Support = () => {
     }, []);
 
     return (
-        <div className="bg-orange-50 min-h-screen py-16 px-4">
+        <div className="bg-orange-50 w-11/12 mx-auto py-16 px-4">
             <div className="max-w-6xl mx-auto">
 
                 {/* Title */}

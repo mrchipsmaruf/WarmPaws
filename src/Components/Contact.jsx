@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import toast from "react-hot-toast";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,7 +13,6 @@ const Contact = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Left Card Scroll Animation
       gsap.fromTo(
         leftCardRef.current,
         { opacity: 0, x: -80 },
@@ -26,7 +26,6 @@ const Contact = () => {
             start: "top 80%",
           },
           onComplete: () => {
-            // Floating AFTER enter
             gsap.to(leftCardRef.current, {
               y: -10,
               repeat: -1,
@@ -38,7 +37,6 @@ const Contact = () => {
         }
       );
 
-      // Right Card Scroll Animation
       gsap.fromTo(
         rightCardRef.current,
         { opacity: 0, x: 80 },
@@ -67,10 +65,18 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
+  // ✅ TOAST HANDLER
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Message sent successfully! 🐾", {
+      duration: 3000,
+    });
+    e.target.reset();
+  };
+
   return (
-    <div className="bg-orange-50 py-20 px-4 overflow-hidden">
+    <div className="bg-orange-50 w-11/12 mx-auto py-20 px-4 overflow-hidden">
       <div className="max-w-5xl mx-auto">
-        {/* Title */}
         <motion.h2
           initial={{ opacity: 0, y: -25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,7 +87,6 @@ const Contact = () => {
           Contact <span className="text-orange-600">Us</span>
         </motion.h2>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left Card */}
           <div
@@ -116,21 +121,16 @@ const Contact = () => {
               viewport={{ once: true }}
               className="space-y-4 text-gray-700"
             >
-              <p>
-                <strong>📍 Address:</strong> Narayanganj, Dhaka, Bangladesh
-              </p>
-              <p>
-                <strong>📞 Phone:</strong> +880 1813-912607
-              </p>
-              <p>
-                <strong>📧 Email:</strong> support@warmpaws.com
-              </p>
+              <p><strong>📍 Address:</strong> Narayanganj, Dhaka, Bangladesh</p>
+              <p><strong>📞 Phone:</strong> +880 1813-912607</p>
+              <p><strong>📧 Email:</strong> support@warmpaws.com</p>
             </motion.div>
           </div>
 
           {/* Right Card */}
           <form
             ref={rightCardRef}
+            onSubmit={handleSubmit}
             className="bg-white p-8 rounded-2xl shadow-lg border border-orange-200 will-change-transform"
           >
             <motion.h3
