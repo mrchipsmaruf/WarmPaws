@@ -1,6 +1,6 @@
 🐾 WarmPaws – Animal Welfare & Pet Adoption Platform
 
-🔗 [Live Site: https://warm-paws-three.vercel.app/
+🔗 Live Site: https://warm-paws-three.vercel.app/
 
 WarmPaws is an animal welfare platform designed to connect people with adoptable pets and support rescue missions through community-driven donations. The goal is to create a safe, friendly, and supportive environment where animals can find loving homes and receive proper care.
 
